@@ -1,0 +1,79 @@
+# These redirects are handled by Netlify
+#
+
+# Documentation restructuring redirects
+/docs/app_integration_index /docs/api/native-app-integration
+/docs/app_integration_notifications /docs/api/native-app-integration/notifications
+/docs/app_integration_sending_data /docs/api/native-app-integration/sending-data
+/docs/app_integration_sensors /docs/api/native-app-integration/sensors
+/docs/app_integration_setup /docs/api/native-app-integration/setup
+/docs/app_integration_webview /docs/api/native-app-integration/webview
+/docs/architecture_entities /docs/core/entity
+/docs/architecture_hassio /docs/supervisor
+/docs/dev_101_index /docs/dev_101_hass
+/docs/documentation_create_page /docs/documenting/create-page
+/docs/documentation_index /docs/documenting
+/docs/documentation_standards /docs/documenting/standards
+/docs/entity_air_quality /docs/core/entity/air-quality
+/docs/entity_alarm_control_panel /docs/core/entity/alarm-control-panel
+/docs/entity_binary_sensor /docs/core/entity/binary-sensor
+/docs/entity_climate /docs/core/entity/climate
+/docs/entity_cover /docs/core/entity/cover
+/docs/entity_fan /docs/core/entity/fan
+/docs/entity_humidifier /docs/core/entity/humidifier
+/docs/entity_index /docs/core/entity
+/docs/entity_light /docs/core/entity/light
+/docs/entity_lock /docs/core/entity/lock
+/docs/entity_media_player /docs/core/entity/media-player
+/docs/entity_number /docs/core/entity/number
+/docs/entity_remote /docs/core/entity/remote
+/docs/entity_sensor /docs/core/entity/sensor
+/docs/entity_switch /docs/core/entity/switch
+/docs/entity_vacuum /docs/core/entity/vacuum
+/docs/entity_water_heater /docs/core/entity/water-heater
+/docs/entity_weather /docs/core/entity/weather
+/docs/external_api_rest /docs/api/rest
+/docs/external_api_websocket /docs/api/websocket
+/docs/frontend_add_card /docs/frontend/extending/adding-state-card
+/docs/frontend_add_more_info /docs/frontend/extending/adding-more-info-dialogs
+/docs/frontend_add_websocket_api /docs/frontend/extending/websocket-api
+/docs/frontend_architecture /docs/frontend/architecture
+/docs/frontend_creating_custom_panels /docs/frontend/custom-ui/creating-custom-panels
+/docs/frontend_data /docs/frontend/data
+/docs/frontend_development /docs/frontend/development
+/docs/frontend_external_auth /docs/frontend/external-authentication
+/docs/frontend_external_bus /docs/frontend/external-bus
+/docs/frontend_index /docs/frontend
+/docs/hassio_addon_communication /docs/add-ons/communication
+/docs/hassio_addon_config /docs/add-ons/configuration
+/docs/hassio_addon_index /docs/add-ons
+/docs/hassio_addon_presentation /docs/add-ons/presentation
+/docs/hassio_addon_publishing /docs/add-ons/publishing
+/docs/hassio_addon_repository /docs/add-ons/repository
+/docs/hassio_addon_security /docs/add-ons/security
+/docs/hassio_addon_testing /docs/add-ons/testing
+/docs/hassio_addon_tutorial /docs/add-ons/tutorial
+/docs/hassio_debugging /docs/supervisor/debugging
+/docs/hassio_hass /docs/supervisor/developing
+/docs/integration_quality_scale_index /docs/core/integration-quality-scale
+/docs/internationalization_backend_localization /docs/internationalization/core
+/docs/internationalization_custom_component_localization /docs/internationalization/custom_integration
+/docs/internationalization_index /docs/internationalization
+/docs/internationalization_translation /docs/translations
+/docs/internationalization_translation.html /docs/translations
+/docs/issue_registry_index /docs/platform/repairs
+/docs/lovelace_custom_card /docs/frontend/custom-ui/lovelace-custom-card
+/docs/reproduce_state_index /docs/core/platform/reproduce_state
+/docs/significant_change_index /docs/core/platform/significant_change
+/docs/supervisor/developing /docs/supervisor/development
+/docs/core/conversation/custom_agent /docs/core/entity/conversation
+
+# Tidying moved pages
+/docs/creating_platform_example_sensor https://github.com/home-assistant/example-custom-config/tree/master/custom_components/example_sensor
+/docs/creating_platform_example_light https://github.com/home-assistant/example-custom-config/tree/master/custom_components/example_light
+/docs/creating_component_deps_and_reqs /docs/creating_integration_manifest
+
+# Retiring "Lovelace" terminology
+/docs/frontend/custom-ui/lovelace-custom-card /docs/frontend/custom-ui/custom-card
+/docs/frontend/custom-ui/lovelace-custom-strategy /docs/frontend/custom-ui/custom-strategy
+/docs/frontend/custom-ui/lovelace-custom-view /docs/frontend/custom-ui/custom-view

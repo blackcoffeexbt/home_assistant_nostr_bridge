@@ -1,0 +1,35 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Setup Home Assistant Nostr Bridge",
+        "description": "Configure the integration to send entity state changes to Nostr relays",
+        "data": {
+          "name": "Name",
+          "entity_id": "Entity ID to monitor",
+          "relay_url": "Nostr Relay URL",
+          "private_key": "Private Key (hex, leave empty to generate)",
+          "event_kind": "Nostr Event Kind"
+        }
+      }
+    },
+    "error": {
+      "invalid_relay_url": "Invalid relay URL format. Must start with ws:// or wss://",
+      "unknown": "Unexpected error occurred"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Configure Nostr Bridge Options",
+        "description": "Update the settings for your Nostr Bridge",
+        "data": {
+          "entity_id": "Entity ID to monitor",
+          "relay_url": "Nostr Relay URL",
+          "private_key": "Private Key (hex, leave empty to keep current)",
+          "event_kind": "Nostr Event Kind"
+        }
+      }
+    }
+  }
+}

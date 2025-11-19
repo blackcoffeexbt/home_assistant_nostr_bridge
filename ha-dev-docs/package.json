@@ -1,0 +1,42 @@
+{
+  "name": "developers-home-assistant-v-2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "by-node-env",
+    "start:development": "docusaurus start",
+    "start:devcontainer": "docusaurus start --poll --host 0.0.0.0",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "serve": "docusaurus serve",
+    "deploy": "docusaurus deploy"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
+    "@docusaurus/theme-mermaid": "^3.9.2",
+    "@mdx-js/react": "^3.1.1",
+    "@easyops-cn/docusaurus-search-local": "^0.52.1",
+    "by-node-env": "^2.0.1",
+    "clsx": "^2.1.1",
+    "react-dom": "^19.2.0",
+    "react": "^19.2.0",
+    "yaml-loader": "^0.8.1"
+  },
+  "resolutions": {},
+  "engines": {
+    "node": ">=18.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
