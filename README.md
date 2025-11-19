@@ -10,9 +10,8 @@ This integration monitors a specified Home Assistant entity and publishes state 
 
 - **Real-time State Publishing**: Automatically publishes entity state changes to Nostr
 - **Replaceable Events**: Uses Nostr event kind 36107 with stable `d` tags for replaceability
-- **Rich Metadata**: Includes entity domain, state, attributes, and timestamps
-- **UI Configuration**: Easy setup through Home Assistant's integration UI
-- **Configurable Options**: Modify settings without recreating the integration
+- **Event Metadata**: Includes entity domain, state, attributes, and timestamps
+- **UI Configuration**: Setup through Home Assistant's integration UI
 
 ## Installation
 
