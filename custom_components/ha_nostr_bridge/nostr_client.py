@@ -102,31 +102,58 @@ class NostrClient:
             _LOGGER.debug("Publishing event with kind: %s, entity: %s, state: %s", 
                          event_kind, entity_id, new_state.state)
             
-            # Create basic tags (ensure all values are strings)
-            tags = [
-                Tag.hashtag("home-assistant"),
-                Tag.parse(["entity", str(entity_id)]),
-                Tag.parse(["domain", str(new_state.domain)]),
-                Tag.parse(["state", str(new_state.state)]),
-            ]
+            # Create tags using the correct Tag.parse() method from examples
+            tags = []
             
-            # For spontaneous addressable events (kind 36107), add a d tag for replaceability
-            if int(event_kind) == 36107:
-                # Create a stable d tag based on entity_id so events replace each other
-                d_tag_value = f"ha-entity-{entity_id.replace('.', '-')}"
-                tags.append(Tag.parse(["d", d_tag_value]))
+            try:
+                # Add hashtag for home-assistant (t tag)
+                tags.append(Tag.parse(["t", "home-assistant"]))
+                
+                # Add custom tags for entity info
+                tags.append(Tag.parse(["entity", str(entity_id)]))
+                tags.append(Tag.parse(["domain", str(new_state.domain)]))
+                tags.append(Tag.parse(["state", str(new_state.state)]))
+                
+                # For spontaneous addressable events (kind 36107), add a d tag for replaceability
+                if int(event_kind) == 36107:
+                    # Create a stable d tag based on entity_id so events replace each other
+                    d_tag_value = f"ha-entity-{entity_id.replace('.', '-')}"
+                    tags.append(Tag.parse(["d", d_tag_value]))
+                
+                _LOGGER.debug("Created %d tags successfully", len(tags))
+                
+            except Exception as e:
+                _LOGGER.error("Failed to create tags: %s", e)
+                tags = []
             
-            # Build the Nostr event with proper Kind and tags
+            # Build the Nostr event using the correct API from examples
             kind = Kind(int(event_kind))
-            builder = EventBuilder(kind, content)
             
-            # Add tags one by one (if supported by this version of the API)
-            for tag in tags:
+            _LOGGER.debug("Creating event with %d tags", len(tags))
+            
+            try:
+                # Create builder and add tags using the .tags() method like in examples
+                if int(event_kind) == 1:
+                    # For text notes, use text_note method
+                    builder = EventBuilder.text_note(content).tags(tags)
+                else:
+                    # For other kinds, use the constructor then add tags
+                    builder = EventBuilder(kind, content).tags(tags)
+                
+                _LOGGER.debug("Successfully created event builder with tags")
+                
+            except Exception as e:
+                _LOGGER.error("Failed to create event builder with tags: %s", e)
+                # Fallback to basic event without tags
                 try:
-                    builder.add_tag(tag)
-                except AttributeError:
-                    # If add_tag doesn't exist, we'll build without custom tags
-                    pass
+                    if int(event_kind) == 1:
+                        builder = EventBuilder.text_note(content)
+                    else:
+                        builder = EventBuilder(kind, content)
+                    _LOGGER.warning("Created event without tags due to error")
+                except Exception as e2:
+                    _LOGGER.error("Failed to create any event builder: %s", e2)
+                    return
             
             # Publish the event
             await self.client.send_event_builder(builder)
